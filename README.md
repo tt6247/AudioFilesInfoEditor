@@ -4,7 +4,7 @@
 
 ## 启动
 
-- **直接运行**：在本仓库的 Releases 页面下载 `AudioFilesInfoEditor-v1.1.exe`（含中文输入修复与空标题补填），双击运行，无需安装 Python。本地打包结果位于 `dist/`。
+- **直接运行**：在 [Releases 下载页面](https://github.com/tt6247/AudioFilesInfoEditor/releases/latest) 下载 `AudioFilesInfoEditor-v1.1.exe`（含中文输入修复与空标题补填），双击运行，无需安装 Python。本地打包结果位于 `dist/`。
 - **运行源码**：安装 Python 3.10 或更新版本，双击 `start.bat`。首次启动会在项目内安装 Mutagen；也可运行 `python -m pip install --target .vendor -r requirements.txt`，然后 `python app.py`。
 
 ## 使用
