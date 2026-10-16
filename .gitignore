@@ -1,0 +1,12 @@
+.vendor/
+.venv/
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+.audio-tag-backups/
+.test-artifacts/
+.build-tools/
+.package/
+build-log.txt
