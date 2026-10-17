@@ -40,12 +40,20 @@
 
 ## 开发与验证
 
-运行 `python -m unittest discover -s tests -v`。基础测试只依赖项目运行环境；多编码测试额外需要 FFmpeg，可从 PATH 或 `.build-tools/imageio_ffmpeg/binaries/` 查找。测试会生成临时音档，验证 Unicode 标签、清除字段、备份恢复、外部修改冲突、失败保护、桌面批量流程及窗口布局，并对比编辑前后解码音频内容。
+完整说明见[开发文档](docs/README.md)：
 
-打包 Windows 程序：先安装 PyInstaller 到项目内的 `.build-tools`，设置 `PYTHONPATH=.build-tools;.vendor`，再运行：
+- [开发入门](docs/DEVELOPMENT.md)：环境安装、源码目录和调试入口。
+- [架构与数据流程](docs/ARCHITECTURE.md)：标签适配、自动补填、备份恢复、后台任务与输入法。
+- [测试与排障](docs/TESTING.md)：14 项现有测试、实际音频验证和桌面验收。
+- [打包与发布](docs/RELEASING.md)：Windows 构建、GitHub 同步及发布核验。
+- [版本记录](CHANGELOG.md)：已发布功能和文档更新。
+
+运行自动检查：
 
 ```powershell
-python -m PyInstaller --noconfirm --clean --onefile --windowed --name AudioFilesInfoEditor-v1.1 --paths .vendor app.py
+python -m unittest discover -s tests -v
 ```
+
+桌面测试需要可用的桌面环境；多编码测试需要 FFmpeg，缺失时会跳过对应测试。完整安装与验证方式见上述文档。
 
 依赖：[Mutagen](https://mutagen.readthedocs.io/en/latest/)（GPL-2.0-or-later），本项目采用 GPL-2.0-or-later。第三方授权详见 `THIRD_PARTY_NOTICES.md`。
